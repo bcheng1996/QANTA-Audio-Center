@@ -17,9 +17,7 @@ After selecting click the microphone at the bottom and hit the red square when y
 After recording hit the upload button (the arrow pointing up). 
 
 # Playback
-Playback can be viewed through the headphone link in the upper right hand corner.
-
-You can download the playback 
+Playback can be viewed through the headphone link in the upper right hand corner. 
 
 ## NOTEs
 All records are stored as a .wav file in server/api/public/uploads. Will move to DB later.
