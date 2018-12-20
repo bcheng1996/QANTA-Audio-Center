@@ -28,5 +28,4 @@ All records are stored as a .wav file in server/api/public/uploads. Will move to
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2018 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+This project is licensed under the MIT license, Copyright (c) 2018 Benny Cheng.
