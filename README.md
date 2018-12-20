@@ -3,8 +3,23 @@
 
 <br />
 
-<div align="center"><strong>Start your next react project in seconds</strong></div>
-<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
+# Init
+
+Run npm install 
+Run npm start
+
+# How to record
+Record audio by first selecting which of the three questions you would like to record using the (+) symbol.
+After selecting click the microphone at the bottom and hit the red square when you want to stop recording.
+After recording hit the upload button (the arrow pointing up). 
+
+# Playback
+Playback can be viewed through the headphone link in the upper right hand corner.
+You can download the playback 
+
+## NOTEs
+All records are stored as a .wav file in server/api/public/uploads. Will move to DB later.
+
 
 
 ## License
