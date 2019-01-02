@@ -39,21 +39,25 @@ app.get('*.js', (req, res, next) => {
 });
 
 // Start your app.
-app.listen(process.env.PORT || 3000, host, async err => {
-  if (err) {
-    return logger.error(err.message);
-  }
+// app.listen(process.env.PORT || 3000, host, async err => {
+//   if (err) {
+//     return logger.error(err.message);
+//   }
 
-  // Connect to ngrok in dev mode
-  if (ngrok) {
-    let url;
-    try {
-      url = await ngrok.connect(port);
-    } catch (e) {
-      return logger.error(e);
-    }
-    logger.appStarted(port, prettyHost, url);
-  } else {
-    logger.appStarted(port, prettyHost);
-  }
+//   // Connect to ngrok in dev mode
+//   if (ngrok) {
+//     let url;
+//     try {
+//       url = await ngrok.connect(port);
+//     } catch (e) {
+//       return logger.error(e);
+//     }
+//     logger.appStarted(port, prettyHost, url);
+//   } else {
+//     logger.appStarted(port, prettyHost);
+//   }
+// });
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Listening");
 });
+
