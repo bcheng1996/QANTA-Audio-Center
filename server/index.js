@@ -57,7 +57,7 @@ app.get('*.js', (req, res, next) => {
 //     logger.appStarted(port, prettyHost);
 //   }
 // });
-
 app.listen(process.env.PORT || 3000, function(){
   console.log("Listening");
 });
+
