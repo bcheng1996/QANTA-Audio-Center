@@ -13,6 +13,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Row, Button } from 'react-materialize';
 import MyCard from 'components/MyCard';
+import ReactAudioPlayer from 'react-audio-player';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class AllRecordPage extends React.PureComponent {
@@ -39,6 +40,7 @@ export default class AllRecordPage extends React.PureComponent {
         for (let audio in body) {
           res[body[audio].charAt(0)].audio_files.push(body[audio]);
         }
+        console.log(res);
         this.setState({ audios: res, isLoading: false });
       })
   }
@@ -59,6 +61,11 @@ export default class AllRecordPage extends React.PureComponent {
     }
   }
 
+  handleOpenAudio = () => {
+    console.log("helo");
+  }
+
+
   render() {
     let keys = Object.keys(this.state.audios);
     return (
@@ -68,7 +75,7 @@ export default class AllRecordPage extends React.PureComponent {
           {this.state.isLoading == true ? <h1>Loading Audio</h1> : keys.map(key =>
             <MyCard key={key} title={this.state.audios[key].question}>
               {this.state.audios[key].audio_files.map(file =>
-                <audio key={file} ref={file} controls onPlay={(e) => this.handleOpenAudio(e, this, file)}> </audio>
+                <ReactAudioPlayer controls key={file} src={"api/playAudio?f="+file} /> 
               )}
 
             </MyCard>
@@ -77,6 +84,7 @@ export default class AllRecordPage extends React.PureComponent {
           }
 
         </Row>
+        <audio controls src="123.mp3" > </audio>
       </div>
 
     );

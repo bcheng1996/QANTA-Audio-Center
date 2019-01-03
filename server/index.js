@@ -15,6 +15,7 @@ const { resolve } = require('path');
 const app = express();
 const api = require('./api');
 
+
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -39,25 +40,25 @@ app.get('*.js', (req, res, next) => {
 });
 
 // Start your app.
-// app.listen(process.env.PORT || 3000, host, async err => {
-//   if (err) {
-//     return logger.error(err.message);
-//   }
+app.listen(port, host, async err => {
+  if (err) {
+    return logger.error(err.message);
+  }
 
-//   // Connect to ngrok in dev mode
-//   if (ngrok) {
-//     let url;
-//     try {
-//       url = await ngrok.connect(port);
-//     } catch (e) {
-//       return logger.error(e);
-//     }
-//     logger.appStarted(port, prettyHost, url);
-//   } else {
-//     logger.appStarted(port, prettyHost);
-//   }
-// });
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Listening");
+  // Connect to ngrok in dev mode
+  if (ngrok) {
+    let url;
+    try {
+      url = await ngrok.connect(port);
+    } catch (e) {
+      return logger.error(e);
+    }
+    logger.appStarted(port, prettyHost, url);
+  } else {
+    logger.appStarted(port, prettyHost);
+  }
 });
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Listening");
+// });
 
